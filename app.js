@@ -49,8 +49,6 @@ let transporter = nodemailer.createTransport({
     }
 })
 
-
-
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -76,6 +74,7 @@ app.post('/cancel', (req, res) => {
 })
 
 app.post('/booking', (req, res) => {
+
     const customerName = req.body.customerName
     const seatCount = req.body.customerSeatCount
     const customerDate = req.body.date
@@ -83,8 +82,6 @@ app.post('/booking', (req, res) => {
     const reference = req.body.reference
     const email = req.body.customerEmail
     const preorderedFood = req.body.preorderedFood
-
-
 
     const userBooking = new Booking({
         name: customerName,
