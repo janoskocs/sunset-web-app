@@ -5,6 +5,7 @@ let date
 let time
 let preOrderedFood = []
 let email = ''
+let reference = ''
 //SELECTORS
 const multiStepForm = document.querySelector('[data-multi-step]')
 const formSteps = [...multiStepForm.querySelectorAll('[data-step]')]
@@ -138,14 +139,16 @@ function showError(message) {
 }
 
 function showSummaryBooking() {
-
+    reference = bookingRefNum()
+    document.getElementById('reference').value = reference
+    document.getElementById('preorderedFood').value = preOrderedFood.toString()
     summaryTextField.innerText = `Please double check your booking details. 
     Name: ${capitalizeName(customerName)}
     Booked seats: ${seatCount}
     Date and time: ${date} ${time}
     Preordered food: ${preOrderedFood.join(', ')}
     Email address: ${email}
-    Booking reference number: ${bookingRefNum()}
+    Booking reference number: ${reference}
     `//Template literal to build summary of booking, name has a capitalize function, preordered food is separated by comma, and a random number generator function returns the booking reference
 }
 
