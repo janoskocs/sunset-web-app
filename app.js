@@ -3,9 +3,13 @@ const app = express()
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
+const favicon = require('serve-favicon')
+
 require('dotenv').config()
 
-mongoose.connect('mongodb://127.0.0.1:27017/restaurantBooking')
+app.use(favicon(__dirname + '/public/favicon.ico'))
+
+mongoose.connect('mongodb+srv://' + process.env.DBUSER + ':' + process.env.DBPASS + '@sunset-restaurantdb.l6se1xy.mongodb.net/restaurantBooking')
 
 const bookingSchema = new mongoose.Schema({
     name: {
