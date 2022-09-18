@@ -4,6 +4,7 @@ let seatCount
 let date
 let time
 let preOrderedFood = []
+let email = ''
 //SELECTORS
 const multiStepForm = document.querySelector('[data-multi-step]')
 const formSteps = [...multiStepForm.querySelectorAll('[data-step]')]
@@ -16,7 +17,8 @@ const seatCountPage = 1
 const dateSelectionPage = 2
 const timeSelectionPage = 3
 const foodCarouselPage = 4
-const submitPage = 5
+const emailInputPage = 5
+const submitPage = 6
 
 //FLAGS END HERE
 let currentStep = formSteps.findIndex(step => {
@@ -79,9 +81,14 @@ multiStepForm.addEventListener('click', e => {
                 }
             case foodCarouselPage:
                 currentStep += 1
-                showSummaryBooking()
+
                 showCurrentStep()
                 break;
+            case emailInputPage:
+
+                currentStep += 1
+                showSummaryBooking()
+                showCurrentStep()
             default:
             // code block
         }
