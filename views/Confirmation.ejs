@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Thank you for booking!</title>
+    <meta name="Booking confirmation page." content="Booking confirmation of the Sunset Restarurant web app.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="public\css\main.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="logo">
+        <img src="../img/logol.png" alt="Logo of Sunset Restaurant.">
+    </div>
+    <div class="page">
+        <h2>Sunset Restaurant</h2>
+        <h4>Thank you for using our online interactive booking system! Please review your booking details below.
+        </h4>
+        <h4>This is a personal project. To work with me, please visit <a href="https://janoskocs.com">janoskocs.com</a>
+            and drop me a message!</h4>
+        <div id="summary" data-summary-container>
+            <p data-summary-text class="summary-text"></p>
+            <p>Name: <%=customerName %>
+            </p>
+            <p>Name: <%=seatCount %>
+            </p>
+            <p>Name: <%=customerDate %>
+            </p>
+            <p>Name: <%=customerTime %>
+            </p>
+        </div>
+
+        <div class="navigation">
+            <div class="steps-counter">
+                <p>&#x278A;</p>
+                <p>&#x2777;</p>
+                <p>&#x278C;</p>
+                <p>&#x278D;</p>
+                <p>&#x278E;</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 require('dotenv').config()
 
+app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -17,7 +18,7 @@ app.post('/booking', (req, res) => {
     const customerDate = req.body.date
     const customerTime = req.body.customerTime
 
-    res.send('Thanks for booking ' + customerName + '! You booked ' + seatCount + ' seat(s). You will arrive at ' + customerDate + ' and at ' + customerTime + ' .')
+    res.render('Confirmation', { customerName: customerName, seatCount: seatCount, customerDate: customerDate, customerTime: customerTime })
 
 })
 
