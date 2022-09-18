@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const nodemailer = require('nodemailer')
 require('dotenv').config()
 
 mongoose.connect('mongodb://127.0.0.1:27017/restaurantBooking')
@@ -36,6 +37,16 @@ const bookingSchema = new mongoose.Schema({
 
 const Booking = mongoose.model('Booking', bookingSchema)
 
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.USER,
+        pass: process.env.PASS
+    }
+})
+
+
+
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -66,6 +77,21 @@ app.post('/booking', (req, res) => {
     })
 
     userBooking.save().then(() => {
+
+        let options = {
+            from: "thesunsetrestaurantproject@gmail.com",
+            to: "janos.kocs@outlook.com",
+            subject: 'Thank you ' + customerName + ' for booking a table!',
+            html: 'test'
+        }
+        transporter.sendMail(options, (err, info) => {
+            if (err) {
+                console.log("NODEMAILER: " + err)
+                return
+            }
+            console.log('Sent: ' + info.response)
+        })
+
         res.render('Confirmation', { customerName: customerName, seatCount: seatCount, customerDate: customerDate, customerTime: customerTime, reference: reference, preorderedFood: preorderedFood })
     }).catch((err) => {
         res.render('Unsuccess')
