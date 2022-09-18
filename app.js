@@ -118,6 +118,6 @@ app.post('/booking', (req, res) => {
     })
 })
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 4000, () => {
     console.log('The server started at port: ' + process.env.PORT + '.')
 })
