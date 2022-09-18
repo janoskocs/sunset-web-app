@@ -4,6 +4,8 @@ let seatCount
 let date
 let time
 let preOrderedFood = []
+let email = ''
+let reference = ''
 //SELECTORS
 const multiStepForm = document.querySelector('[data-multi-step]')
 const formSteps = [...multiStepForm.querySelectorAll('[data-step]')]
@@ -16,7 +18,8 @@ const seatCountPage = 1
 const dateSelectionPage = 2
 const timeSelectionPage = 3
 const foodCarouselPage = 4
-const submitPage = 5
+const emailInputPage = 5
+const submitPage = 6
 
 //FLAGS END HERE
 let currentStep = formSteps.findIndex(step => {
@@ -79,9 +82,21 @@ multiStepForm.addEventListener('click', e => {
                 }
             case foodCarouselPage:
                 currentStep += 1
-                showSummaryBooking()
+
                 showCurrentStep()
                 break;
+            case emailInputPage:
+                if (isInputValid(inputs)) {
+                    spanUpdate(inputs)//Call input valid function below to check if the input isn't empty
+                    email = inputs
+                    currentStep += 1//Update currentstep so that the showCurrentStep can show the next page
+                    showCurrentStep()
+                    showSummaryBooking()
+                    break;
+                } else {
+                    showError('Please enter your name...')//If input is invalid, throw error
+                    break;
+                }
             default:
             // code block
         }
@@ -124,13 +139,16 @@ function showError(message) {
 }
 
 function showSummaryBooking() {
-
+    reference = bookingRefNum()
+    document.getElementById('reference').value = reference
+    document.getElementById('preorderedFood').value = preOrderedFood.toString()
     summaryTextField.innerText = `Please double check your booking details. 
     Name: ${capitalizeName(customerName)}
     Booked seats: ${seatCount}
     Date and time: ${date} ${time}
     Preordered food: ${preOrderedFood.join(', ')}
-    Booking reference number: ${bookingRefNum()}
+    Email address: ${email}
+    Booking reference number: ${reference}
     `//Template literal to build summary of booking, name has a capitalize function, preordered food is separated by comma, and a random number generator function returns the booking reference
 }
 

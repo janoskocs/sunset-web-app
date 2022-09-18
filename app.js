@@ -45,8 +45,10 @@ app.post('/booking', (req, res) => {
     const seatCount = req.body.customerSeatCount
     const customerDate = req.body.date
     const customerTime = req.body.customerTime
+    const reference = req.body.reference
+    const preorderedFood = req.body.preorderedFood
 
-    res.render('Confirmation', { customerName: customerName, seatCount: seatCount, customerDate: customerDate, customerTime: customerTime })
+    res.render('Confirmation', { customerName: customerName, seatCount: seatCount, customerDate: customerDate, customerTime: customerTime, reference: reference, preorderedFood: preorderedFood })
 
 })
 
