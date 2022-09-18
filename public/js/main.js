@@ -85,10 +85,17 @@ multiStepForm.addEventListener('click', e => {
                 showCurrentStep()
                 break;
             case emailInputPage:
-
-                currentStep += 1
-                showSummaryBooking()
-                showCurrentStep()
+                if (isInputValid(inputs)) {
+                    spanUpdate(inputs)//Call input valid function below to check if the input isn't empty
+                    email = inputs
+                    currentStep += 1//Update currentstep so that the showCurrentStep can show the next page
+                    showCurrentStep()
+                    showSummaryBooking()
+                    break;
+                } else {
+                    showError('Please enter your name...')//If input is invalid, throw error
+                    break;
+                }
             default:
             // code block
         }
@@ -137,6 +144,7 @@ function showSummaryBooking() {
     Booked seats: ${seatCount}
     Date and time: ${date} ${time}
     Preordered food: ${preOrderedFood.join(', ')}
+    Email address: ${email}
     Booking reference number: ${bookingRefNum()}
     `//Template literal to build summary of booking, name has a capitalize function, preordered food is separated by comma, and a random number generator function returns the booking reference
 }
