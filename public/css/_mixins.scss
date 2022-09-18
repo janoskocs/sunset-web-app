@@ -1,0 +1,31 @@
+//MIXINS
+
+//HEADER-TEXT
+
+@mixin header-text {
+    font-family: 'Permanent Marker', sans-serif;
+    font-size: $large;
+    color: $main-color;
+    text-shadow: 0px 2px 20px $accent-orange;
+}
+
+@mixin general-text($color, $text-shadow) {
+    font-family: 'Righteous', sans-serif;
+    font-size: $medium;
+    color: $color;
+    text-shadow: $text-shadow;
+}
+
+@mixin input-style-reset {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+@mixin border-bottom-expand {
+    display: block;
+    content: '';
+    border-bottom: solid 2px $accent-color;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}

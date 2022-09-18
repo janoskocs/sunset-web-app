@@ -1,0 +1,32 @@
+{
+  "name": "sunset-web-app",
+  "version": "1.0.0",
+  "description": "Interactive booking form for a personal project. janoskocs.com",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janoskocs/sunset-web-app.git"
+  },
+  "keywords": [
+    "booking",
+    "form",
+    "personal",
+    "project",
+    "janoskocs.com"
+  ],
+  "author": "Janos Kocs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/janoskocs/sunset-web-app/issues"
+  },
+  "homepage": "https://github.com/janoskocs/sunset-web-app#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.1"
+  }
+}

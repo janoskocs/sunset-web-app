@@ -1,0 +1,339 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: url("../img/hero1280gradient.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0px 2px 20px #d86337;
+}
+
+h4 {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: 0px 2px 20px #d86337;
+}
+
+input {
+  border: none;
+  background: none;
+  outline: none;
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: none;
+  margin: 2rem;
+}
+
+input::-webkit-input-placeholder {
+  color: #228cda;
+  opacity: 1;
+}
+
+input:-ms-input-placeholder {
+  color: #228cda;
+  opacity: 1;
+}
+
+input::-ms-input-placeholder {
+  color: #228cda;
+  opacity: 1;
+}
+
+input::placeholder {
+  color: #228cda;
+  opacity: 1;
+}
+
+input:-ms-input-placeholder {
+  color: #228cda;
+}
+
+input:-ms-input-placeholder {
+  color: #228cda;
+}
+
+input[type="text"] {
+  display: inline-block;
+  color: #FF69B4;
+  font-size: 2rem;
+  border-bottom: 1px solid transparent;
+  width: auto;
+  text-align: center;
+}
+
+input[type="text"]:after {
+  display: block;
+  content: '';
+  border-bottom: solid 2px #FF69B4;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+input[type="text"]:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+input[type="text"]:focus {
+  border-bottom: 1px solid #FF69B4;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: none;
+}
+
+button:after {
+  display: block;
+  content: '';
+  border-bottom: solid 2px #FF69B4;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+button:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+input[type="date"],
+input[type="time"] {
+  color: #fff;
+  background-color: #19628d;
+  padding: 0.7rem;
+}
+
+.error-box {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.2rem;
+  color: #cc0000;
+  text-shadow: none;
+  background: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 1.2rem;
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.navigation .steps-counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.2rem;
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 auto;
+}
+
+.navigation .button-container button {
+  margin-left: 1em;
+}
+
+#logo {
+  text-align: center;
+  height: 10vh;
+}
+
+#logo img {
+  width: 5rem;
+  text-align: center;
+}
+
+.page {
+  height: 80vh;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page a {
+  color: #FF69B4;
+}
+
+.page a:hover {
+  color: #19628d;
+}
+
+.page .hidden-block {
+  display: none;
+}
+
+.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: transitionInOut 0.75s;
+          animation: transitionInOut 0.75s;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.customer-name-span {
+  text-transform: capitalize;
+}
+
+#carousel .scroll-instruction {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: none;
+  visibility: hidden;
+}
+
+#carousel ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#carousel ul li {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0.35rem;
+  padding: 0.7rem;
+  text-align: center;
+  border: 1px solid transparent;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#carousel ul li:hover {
+  cursor: pointer;
+  border: 1px solid #FF69B4;
+}
+
+#carousel ul li img {
+  width: 96px;
+  pointer-events: none;
+}
+
+#carousel ul li p {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: none;
+  pointer-events: none;
+}
+
+#carousel ul .selected {
+  background-color: #19628d;
+}
+
+#summary {
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: none;
+  background: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: 1.2rem;
+}
+
+@-webkit-keyframes transitionInOut {
+  from {
+    opacity: 0;
+    -webkit-transform: rotateX(-10deg);
+            transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+@keyframes transitionInOut {
+  from {
+    opacity: 0;
+    -webkit-transform: rotateX(-10deg);
+            transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  body {
+    background-size: auto;
+  }
+  button {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0.7rem;
+  }
+  #carousel {
+    width: 100%;
+  }
+  #carousel .scroll-instruction {
+    visibility: visible;
+  }
+  #carousel ul {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  #carousel ul::-webkit-scrollbar {
+    display: none;
+  }
+  #carousel ul li {
+    display: inline-block;
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */

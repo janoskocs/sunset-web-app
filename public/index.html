@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Sunset Restaurant</title>
+    <meta name="description" content="Interactive restaurant table booking web app.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Righteous" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="logo">
+        <img src="../img/logol.png" alt="Logo of Sunset Restaurant.">
+    </div>
+    <form data-multi-step action="/booking" method="post">
+        <div data-step class="page">
+            <h2>Welcome to Sunset Restaurant</h2>
+            <h4>This interactive booking system will guide you through the steps.</h4>
+            <input type="text" data-customer-name placeholder="May I take your name?" name="customerName">
+            <div class="error-box hidden" data-error-container>
+                <p data-error>Something went wrong. Please refresh the page.</p>
+            </div>
+            <button type="button" data-next>Be seated! &#8594;</button>
+        </div>
+        <div data-step class="page">
+            <h2>Nice to meet you <span data-customer-name-show class="customer-name-span">NAME</span></h2>
+            <h4>How many seats would you like to book?</h4>
+            <input type="text" placeholder="Number of seats..." name="customerSeatCount">
+            <div class="error-box hidden" data-error-container>
+                <p data-error>Something went wrong. Please refresh the page.</p>
+            </div>
+            <div class="navigation">
+                <div class="button-container">
+                    <button type="button" data-previous>&#x2190; Change my name</button>
+                    <button type="button" data-next>Proceed to the next step &#8594;</button>
+                </div>
+                <div class="steps-counter">
+                    <p>&#x278A;</p>
+                    <p>&#x2781;</p>
+                    <p>&#x2782;</p>
+                    <p>&#x2783;</p>
+                    <p>&#x2784;</p>
+                </div>
+            </div>
+        </div>
+        <div data-step class="page">
+            <h2>Sunset Restaurant</h2>
+            <h4>Thank you <span data-customer-name-show class="customer-name-span">Name</span>. You have selected <span
+                    data-seat-count>SEATS</span> seat(s).</h4>
+            <h4>Please select the date you'd like to visit our Restaurant.</h4>
+            <input type="date" name="date" id="dateInput">
+            <div class="error-box hidden" data-error-container>
+                <p data-error>Something went wrong. Please refresh the page.</p>
+            </div>
+            <div class="navigation">
+                <div class="button-container">
+                    <button type="button" data-previous>&#x2190; Go back</button>
+                    <button type="button" data-next>Proceed to the next step &#8594;</button>
+                </div>
+                <div class="steps-counter">
+                    <p>&#x278A;</p>
+                    <p>&#x2777;</p>
+                    <p>&#x2782;</p>
+                    <p>&#x2783;</p>
+                    <p>&#x2784;</p>
+                </div>
+            </div>
+        </div>
+        <div data-step class="page">
+            <h2>Sunset Restaurant</h2>
+            <h4>Great! What time would you like to come?</h4>
+            <input type="time" id="timeInput" min="09:00" max="20:00" name="customerTime">
+            <div class="error-box hidden" data-error-container>
+                <p data-error>Something went wrong. Please refresh the page.</p>
+            </div>
+            <div class="navigation">
+                <div class="button-container">
+                    <button type="button" data-previous>&#x2190; Go back</button>
+                    <button type="button" data-next>Proceed to the next step &#8594;</button>
+                </div>
+                <div class="steps-counter">
+                    <p>&#x278A;</p>
+                    <p>&#x2777;</p>
+                    <p>&#x2778;</p>
+                    <p>&#x2783;</p>
+                    <p>&#x2784;</p>
+                </div>
+            </div>
+        </div>
+        <div data-step class="page">
+            <h2>Sunset Restaurant</h2>
+            <h4>If you are hungry already <span data-customer-name-show class="customer-name-span">NAME</span>, then you
+                can preorder your meal now so you can enjoy it straight away!</h4>
+            <input type="text" class="hidden-block">
+            <div id="carousel">
+                <ul data-food-container>
+                    <li class="item" data-food>
+                        <img src="img/food/1.jpg" alt="Picture of a plate with food.">
+                        <p>Chicken Salad</p>
+                    </li>
+                    <li class="item" data-food>
+                        <img src="img/food/2.jpg" alt="Picture of a plate with food.">
+                        <p>Hamburger</p>
+                    </li>
+                    <li class="item" data-food>
+                        <img src="img/food/3.jpg" alt="Picture of a plate with food.">
+                        <p>Pho</p>
+                    </li>
+                    <li class="item" data-food>
+                        <img src="img/food/4.jpg" alt="Picture of a plate with food.">
+                        <p>Chicken breast</p>
+                    </li>
+                    <li class="item" data-food>
+                        <img src="img/food/5.jpg" alt="Picture of a plate with food.">
+                        <p>Pho with eggs</p>
+                    </li>
+                    <li class="item" data-food>
+                        <img src="img/food/9.jpg" alt="Picture of a plate with food.">
+                        <p>Salad</p>
+                    </li>
+                </ul>
+                <p class="scroll-instruction">&#8592; Scroll left or right &#8594;</p>
+            </div>
+            <div class="error-box hidden" data-error-container>
+                <p data-error>Something went wrong. Please refresh the page.</p>
+            </div>
+            <div class="navigation">
+                <div class="button-container">
+                    <button type="button" data-previous>&#x2190; Go back</button>
+                    <button type="button" data-next>Save and review booking &#8594;</button>
+                </div>
+
+                <div class="steps-counter">
+                    <p>&#x278A;</p>
+                    <p>&#x2777;</p>
+                    <p>&#x278C;</p>
+                    <p>&#x278D;</p>
+                    <p>&#x2784;</p>
+                </div>
+            </div>
+        </div>
+        <div data-step class="page">
+            <h2>Sunset Restaurant</h2>
+            <h4>Thank you for using our online interactive booking system! Please review your booking details below.
+            </h4>
+            <h4>This is a personal project. To work with me, please visit <a
+                    href="https://janoskocs.com">janoskocs.com</a> and drop me a message!</h4>
+            <div id="summary" data-summary-container>
+                <p data-summary-text class="summary-text">Thank you.</p>
+            </div>
+
+            <button type="submit">Book my table</button>
+            <div class="navigation">
+                <div class="steps-counter">
+                    <p>&#x278A;</p>
+                    <p>&#x2777;</p>
+                    <p>&#x278C;</p>
+                    <p>&#x278D;</p>
+                    <p>&#x278E;</p>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>
