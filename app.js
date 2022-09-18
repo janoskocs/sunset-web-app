@@ -9,7 +9,7 @@ require('dotenv').config()
 
 app.use(favicon(__dirname + '/public/favicon.ico'))
 
-mongoose.connect('mongodb+srv://' + process.env.DBUSER + ':' + process.env.DBPASS + '@sunset-restaurantdb.l6se1xy.mongodb.net/restaurantBooking')
+mongoose.connect(process.env.MONGODB)
 
 const bookingSchema = new mongoose.Schema({
     name: {
