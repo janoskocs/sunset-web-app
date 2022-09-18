@@ -17,7 +17,7 @@ const bookingSchema = new mongoose.Schema({
     },
     date: {
         type: Date,
-        default Date.now
+        default: Date.now
     },
     time: {
         type: String,
@@ -25,13 +25,17 @@ const bookingSchema = new mongoose.Schema({
     },
     reference: {
         type: Number,
-        required: trusted,
+        required: true,
     },
     email: {
         type: String,
         required: true
-    }
+    },
+    preorderedFood: []
 })
+
+const Booking = mongoose.model('Booking', bookingSchema)
+
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -46,10 +50,26 @@ app.post('/booking', (req, res) => {
     const customerDate = req.body.date
     const customerTime = req.body.customerTime
     const reference = req.body.reference
+    const email = req.body.customerEmail
     const preorderedFood = req.body.preorderedFood
 
-    res.render('Confirmation', { customerName: customerName, seatCount: seatCount, customerDate: customerDate, customerTime: customerTime, reference: reference, preorderedFood: preorderedFood })
 
+
+    const userBooking = new Booking({
+        name: customerName,
+        seatCount: Number(seatCount),
+        date: customerDate,
+        time: customerTime,
+        reference: reference,
+        email: email,
+        preorderedFood: preorderedFood
+    })
+
+    userBooking.save().then(() => {
+        res.render('Confirmation', { customerName: customerName, seatCount: seatCount, customerDate: customerDate, customerTime: customerTime, reference: reference, preorderedFood: preorderedFood })
+    }).catch((err) => {
+        res.render('Unsuccess')
+    })
 })
 
 app.listen(process.env.PORT, () => {
