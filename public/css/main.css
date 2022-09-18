@@ -130,6 +130,34 @@ input[type="time"] {
   padding: 0.7rem;
 }
 
+#cancelBooking {
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  font-family: 'Righteous', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: none;
+  text-decoration: none;
+}
+
+#cancelBooking:hover {
+  color: #cc0000;
+}
+
+.page-cancel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.page-cancel form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .error-box {
   font-family: 'Righteous', sans-serif;
   font-size: 1.2rem;

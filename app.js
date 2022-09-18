@@ -55,6 +55,22 @@ app.get('/', (req, res) => {
     res.send('/public/index.html')
 })
 
+app.get('/cancel', (req, res) => {
+    res.render('Delete')
+})
+
+app.post('/cancel', (req, res) => {
+    Booking.deleteOne({ reference: req.body.reference }, (err) => {
+        if (!err) {
+            console.log('deleted')
+            res.render('Deleted-success')
+        } else {
+            res.render('Deleted-no-success')
+            console.log(err)
+        }
+    })
+})
+
 app.post('/booking', (req, res) => {
     const customerName = req.body.customerName
     const seatCount = req.body.customerSeatCount

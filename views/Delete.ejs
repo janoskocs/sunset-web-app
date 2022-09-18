@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cancel your booking</title>
+    <meta name="Booking confirmation page." content="Booking confirmation of the Sunset Restarurant web app.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Righteous" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="logo">
+        <img src="../img/logol.png" alt="Logo of Sunset Restaurant.">
+    </div>
+    <div class="page-cancel">
+        <h2>Sunset Restaurant</h2>
+        <h4>Please enter your reference number below and click cancel.</h4>
+        <form action="/cancel" method="post">
+            <input type="text" maxlength="4" placeholder="Enter your reference..." name="reference" id="reference">
+            <button id="referenceBtn" type="submit">Cancel your booking</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
