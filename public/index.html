@@ -22,15 +22,15 @@
     <div id="logo">
         <img src="../img/logol.png" alt="Logo of Sunset Restaurant.">
     </div>
-    <form data-multi-step action="/booking" method="post">
-        <div data-step class="page">
+    <form data-multi-step action="/booking" method="post" onkeydown="return event.key != 'Enter';">
+        <div data-step class=" page">
             <h2>Welcome to Sunset Restaurant</h2>
             <h4>This interactive booking system will guide you through the steps.</h4>
             <input type="text" data-customer-name placeholder="May I take your name?" name="customerName">
             <div class="error-box hidden" data-error-container>
                 <p data-error>Something went wrong. Please refresh the page.</p>
             </div>
-            <button type="button" data-next>Be seated! &#8594;</button>
+            <button type="button" data-next class="bookTable">Be seated! &#8594;</button>
             <a href="/cancel" id="cancelBooking">&#10005;Cancel my booking </a>
 
 
@@ -193,8 +193,8 @@
                 <input type="hidden" name="reference" value="" id="reference">
                 <input type="hidden" name="preorderedFood" value="" id="preorderedFood">
             </div>
-
-            <button type="submit">Book my table</button>
+            <button type="button" data-previous>&#x2190; Go back</button>
+            <button type="submit" class="bookTable">Book my table</button>
             <div class="navigation">
                 <div class="steps-counter">
                     <p>&#x278A;</p>

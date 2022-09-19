@@ -146,6 +146,10 @@ input[type="time"] {
   color: #cc0000;
 }
 
+.bookTable {
+  font-size: 2rem;
+}
+
 .page-cancel {
   display: flex;
   flex-direction: column;
