@@ -15,5 +15,18 @@ It checks for user input errors to and communicates that via an error box to ass
 
 The Web App is fully responsive to include desktop, tablet, and mobile users.
 
+## Input error checks
+
+![Sunset Restaurant Error Messages](https://github.com/janoskocs/sunset-web-app/blob/main/readmeimg/sunseterror.gif?raw=true)
+
+The app assist users to provide a seamles booking experience.
+
+![Sunset Restaurant Booking](https://github.com/janoskocs/sunset-web-app/blob/main/readmeimg/sunsetbooking.gif?raw=true)
+
+Users can preorder food so they don't have to wait once they arrive. :)
+Users can review their booking information before confirming. Once the user clicks on 'Book my table', a confirmation email will be sent to their email address.
+
+![Sunset Restaurant Booking](https://github.com/janoskocs/sunset-web-app/blob/main/readmeimg/sunsetemail.gif?raw=true)
 
 
+## Thank you for checking out my work! <3
