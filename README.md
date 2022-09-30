@@ -19,7 +19,7 @@ The Web App is fully responsive to include desktop, tablet, and mobile users.
 
 ![Sunset Restaurant Error Messages](https://github.com/janoskocs/sunset-web-app/blob/main/readmeimg/sunseterror.gif?raw=true)
 
-The app assist users to provide a seamles booking experience.
+The app assist users to provide a seamless booking experience.
 
 ![Sunset Restaurant Booking](https://github.com/janoskocs/sunset-web-app/blob/main/readmeimg/sunsetbooking.gif?raw=true)
 
